@@ -1,36 +1,41 @@
 # WebScraping
 
-### Pengertian dan Kegunaan PIP, Web Scraping
-PIP(Pip Install Python)
+
+## Pengertian dan Kegunaan PIP, Web Scraping
+### PIP(Pip Install Python)
 PIP (Python Package Index) adalah sistem manajemen paket yang digunakan untuk menginstal dan mengelola paket (atau modul) Python.
 
 Kegunaan PIP:
 
-PIP memudahkan proses instalasi paket Python yang dibutuhkan. Cukup dengan mengetik perintah "pip install nama_paket" di command prompt atau terminal, maka paket tersebut akan diunduh dan diinstal secara otomatis.
-PIP juga memudahkan proses pengelolaan versi paket. Anda dapat mengecek versi paket yang terinstal, mengupgrade atau menurunkan versi paket, dan menghapus paket yang tidak dibutuhkan dengan perintah PIP yang sesuai.
-PIP memudahkan pencarian paket yang tersedia di Python Package Index (PyPI) dengan perintah "pip search"
-PIP memungkinkan untuk mengelola paket Python yang digunakan dalam proyek dengan menggunakan file requirements.txt, sehingga memudahkan untuk mengkonfigurasi lingkungan kerja dan mengatur dependensi.
+1. PIP memudahkan proses instalasi paket Python yang dibutuhkan. Cukup dengan mengetik perintah `"pip install nama_paket"` di command prompt atau terminal, maka paket tersebut akan diunduh dan diinstal secara otomatis.
+2. PIP juga memudahkan proses pengelolaan versi paket. Anda dapat mengecek versi paket yang terinstal, mengupgrade atau menurunkan versi paket, dan menghapus paket yang tidak dibutuhkan dengan perintah PIP yang sesuai.
+3. PIP memudahkan pencarian paket yang tersedia di Python Package Index (PyPI) dengan perintah `"pip search"`
+4. PIP memungkinkan untuk mengelola paket Python yang digunakan dalam proyek dengan menggunakan file requirements.txt, sehingga memudahkan untuk mengkonfigurasi lingkungan kerja dan mengatur dependensi.
+
 Berikut ini adalah beberapa perintah dasar PIP yang sering digunakan:
 
-pip install <package_name> : digunakan untuk menginstall paket Python baru. Contoh: pip install requests
-pip uninstall <package_name> : digunakan untuk menghapus paket Python yang sudah terinstal. Contoh: pip uninstall requests
-pip list : digunakan untuk melihat daftar paket Python yang sudah terinstal.
-pip show <package_name> : digunakan untuk melihat informasi paket Python yang sudah terinstal, seperti nama, versi, dan lokasi instalasi. Contoh: pip show requests
-pip search <keyword> : digunakan untuk mencari paket Python yang tersedia di PyPI berdasarkan kata kunci. Contoh: pip search requests
-Web Scraping
+1. pip install `<package_name>` : digunakan untuk menginstall paket Python baru. Contoh: `pip install requests`
+2. pip uninstall `<package_name>` : digunakan untuk menghapus paket Python yang sudah terinstal. Contoh: `pip uninstall requests`
+3. pip list : digunakan untuk melihat daftar paket Python yang sudah terinstal.
+4. pip show `<package_name>` : digunakan untuk melihat informasi paket Python yang sudah terinstal, seperti nama, versi, dan lokasi instalasi. Contoh: pip show requests
+5. pip search `<keyword>` : digunakan untuk mencari paket Python yang tersedia di PyPI berdasarkan kata kunci. Contoh: `pip search requests`
+
+### Web Scraping
 Web scraping adalah teknik yang digunakan untuk mengambil atau mengumpulkan data dari website secara otomatis. Data yang dihimpun dapat berupa teks, gambar, atau informasi lain yang tersedia pada website.
 
 Kegunaan Web scraping:
 
-Pengumpulan data: Web scraping digunakan untuk mengumpulkan data dari website yang tidak tersedia dalam format yang mudah diakses, seperti CSV atau Excel.
-Analisis data: Setelah data dihimpun, dapat digunakan untuk melakukan analisis data, seperti mencari pola atau trend dari data tersebut.
-Monitoring website: Web scraping dapat digunakan untuk memantau perubahan harga produk atau stok produk pada website e-commerce.
-Penelitian: Web scraping dapat digunakan dalam penelitian, seperti mengumpulkan data opini publik dari website forum atau media sosial.
-Pencarian lowongan kerja: Web scraping dapat digunakan untuk mencari lowongan kerja di website job portal.
-Web scraping dapat digunakan untuk berbagai tujuan, namun perlu diingat bahwa scraping website tanpa izin dari pemilik website dapat melanggar hukum. Jika Anda berencana untuk melakukan web scraping, pastikan untuk mendapatkan izin dari pemilik website terlebih dahulu.
-Studi kasus
-Bukalapak
-Source code
+1. Pengumpulan data: Web scraping digunakan untuk mengumpulkan data dari website yang tidak tersedia dalam format yang mudah diakses, seperti CSV atau Excel.
+2. Analisis data: Setelah data dihimpun, dapat digunakan untuk melakukan analisis data, seperti mencari pola atau trend dari data tersebut.
+3. Monitoring website: Web scraping dapat digunakan untuk memantau perubahan harga produk atau stok produk pada website e-commerce.
+4. Penelitian: Web scraping dapat digunakan dalam penelitian, seperti mengumpulkan data opini publik dari website forum atau media sosial.
+5. Pencarian lowongan kerja: Web scraping dapat digunakan untuk mencari lowongan kerja di website job portal.
+6. Web scraping dapat digunakan untuk berbagai tujuan, namun perlu diingat bahwa scraping website tanpa izin dari pemilik website dapat melanggar hukum. Jika Anda berencana untuk melakukan web scraping, pastikan untuk mendapatkan izin dari pemilik website terlebih dahulu.
+
+### Studi kasus
+1. **Bukalapak**
+* Source code
+``` python
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -49,7 +54,9 @@ for item in produk:
 #print(data)
 df = pd.DataFrame(data)
 print(df)
-Output
+```
+* Output
+```
  nama         harga
 0   pc817 pc 817 optocoupler sharp asli ori origin...         Rp500
 1   OTG kabel usb micro kabel otg for samsung bb o...       Rp2.500
@@ -81,7 +88,10 @@ Output
 27  Baterai Acer ES1-411 ES1-431 E1-410 E1-410G E1...     Rp184.500
 28  Kabel Power Cord UPS APC Rack Server C13 to Sc...     Rp125.000
 29  Laptop Dell E6410 Core i5 - RAM 4GB -HDD 320GB...   Rp1.929.510
-Glints
+```
+
+2. **Glints**
+``` python
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -101,8 +111,10 @@ for job in produk:
 #print(data)
 df = pd.DataFrame(data)
 print(df)
-Shopee
-Source code
+```
+3. **Shopee**
+* Source code
+``` python
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
@@ -139,7 +151,9 @@ df = pd.DataFrame({'Nama Barang': list_nama, 'Harga Barang': list_harga})
 writer = pd.ExcelWriter('dipca.xlsx')
 df.to_excel(writer, 'Sheet1', index=False)
 writer.save()
-Output
+```
+* Output
+```
 HOOLIGANS Boardshort Academica - Black 84.000
 Atasan Holigans T-shirt Premium Black Unisex Bisa COD 44.700
 HOOLIGANS Hoodie Bold Speziale - Sage Green 189.000
@@ -155,7 +169,9 @@ Hooligans Sandal Santos Mark - White 89.000
 HOOLIGANS T-Shirt SYG Type - Black 88.800
 HOOLIGANS Hoodie Bold Linea - Army Green 189.000
 HOOLIGANS Hoodie Bold Analogue - Beige 189.000
-Olx
+```
+4. **Olx**
+``` python
 from bs4 import BeautifulSoup
 import requests
 
@@ -169,7 +185,9 @@ harga_mobil = soup.find_all('p', class_='price')
 for iklan, harga in zip(judul_iklan, harga_mobil):
     print(iklan.get_text())
     print(harga.get_text())
-Tokopedia
+```
+5. **Tokopedia**
+``` python
 import requests
 from bs4 import BeautifulSoup
 
@@ -191,3 +209,4 @@ product_desc = soup.find('div', class_='product-desc').text
 print('Nama produk:', product_name)
 print('Harga:', product_price)
 print('Deskripsi:', product_desc)
+```
